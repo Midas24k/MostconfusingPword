@@ -1,12 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var password = generatePassword()
-var charactersUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var charactersLowercase = "abcdefghijklmnopqrstuvwxyz"
-var characternumb = "0123456789"
-var charactersymbol = "!@#$%^&*()"
+var charactersUppercase = ["A", "B", "C", "D", "E", "F", "G", "H"," I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var charactersLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x","y","z"]
+var characternumb = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+var charactersymbol = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
 var confirmBtn = "validation"
-
+var charArray = ["charactersLowercase", "charactersUppercase", "characternumb", "charactersymbol"]
 
 function generatePassword() {
   // when the user clicks button a password is generated 
@@ -47,36 +47,35 @@ function generatePassword() {
   var charactersLowercase = confirm("Would you like to use lowercase letters?");
     console.log(charactersLowercase)
   if (charactersLowercase == true || !charactersLowercase == false){
-   charactersLowercase = ("abcdefghijklmnopqrstuvwxyz");
-   console.log("abcdefghijklmnopqrstuvwxyz")
+   charactersLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x","y","z"];
+   console.log(charactersLowercase)
   }
   // prompt user something like "Uppercase letters?"
 
   var charactersUppercase = confirm("Would you like to use Uppercase letters?");
     console.log(charactersUppercase)
   if (charactersUppercase == true){
-    charactersUppercase = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-    console.log("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    charactersUppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    console.log(charactersUppercase)
   }
   // prompt for nums?
   
   var characternumb = confirm("would you like to use numbers?");
     console.log(characternumb)
   if (characternumb == true || !characternumb == false){
-    characternumb = ("0123456789")
-    console.log("0123456789")
+    characternumb = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    console.log(characternumb)
   }
   // prompt for special chars?
   
   var charactersymbol = confirm(" would you like to use symbols?")
     console.log(charactersymbol)
   if (charactersymbol == true){
-    charactersymbol = ("!@#$%^&*()")
-    console.log("!@#$%^&*()")
+    charactersymbol = ["!","@","#","$","%","^","&","*","(",")"]
+    console.log(charactersymbol)
   }
-  
 
-
+     
   // For the below, look into confirm(). It is like alert() and prompt(), but just for Y/N questions
 
   // when all prompts are answered then a password is generated that matches the selceted criteria
