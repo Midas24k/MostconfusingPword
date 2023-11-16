@@ -44,33 +44,32 @@ function generatePassword() {
     alert("Did not meet criteria, please try again") // something telilng the user they did not follow the rules and need to try again
     return '';
   }
-  var charactersLowercase = prompt("Would you like to use lowercase letters?");
-  if (charactersLowercase === true ){
-   charactersLowercase = generateCharacters("abcdefghijklmnopqrstuvwxyz");
-   
-  }else {
-    confirm("ok, next step");
+  var charactersLowercase = confirm("Would you like to use lowercase letters?");
+    console.log(charactersLowercase)
+  if (charactersLowercase == true || !charactersLowercase == false){
+   charactersLowercase = ("abcdefghijklmnopqrstuvwxyz");
+   console.log("abcdefghijklmnopqrstuvwxyz")
+  }
 
-  }
-  var charactersUppercase = prompt("Would you like to use Uppercase letters?");
-  if (charactersUppercase === true){
-    charactersUppercase = generateCharacters("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-  }else{
-    confirm("next step, please")
-  }
-  
-  var characternumb = prompt("would you like to use numbers?");
-  if (characternumb === true){
-    characternumb = generateCharacters("0123456789")
-  }else{
-    confirm("one more time!!!")
+  var charactersUppercase = confirm("Would you like to use Uppercase letters?");
+    console.log(charactersUppercase)
+  if (charactersUppercase == true){
+    charactersUppercase = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    console.log("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
   }
   
-  var charactersymbol = prompt(" would you like to use symbols?")
-  if (charactersymbol === true){
-    charactersymbol = generateCharacters("!@#$%^&*()")
-  }else{
-    console.log("we made it through")
+  var characternumb = confirm("would you like to use numbers?");
+    console.log(characternumb)
+  if (characternumb == true || !characternumb == false){
+    characternumb = ("0123456789")
+    console.log("0123456789")
+  }
+  
+  var charactersymbol = confirm(" would you like to use symbols?")
+    console.log(charactersymbol)
+  if (charactersymbol == true){
+    charactersymbol = ("!@#$%^&*()")
+    console.log("!@#$%^&*()")
   }
   
 
