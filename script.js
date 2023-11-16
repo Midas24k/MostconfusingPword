@@ -34,7 +34,7 @@ function generatePassword() {
   //the users inputs should be validated and atleast one character type should be selceted after all prompts are answered and a password is generated with the selected criteria 
 
 
-  // when all prompts are answered then a password is generated that matches the selceted criteria
+  // prompt user "do you want to use lowercase letters?" or something
   console.log("you clicked the button ");
   // prompt user for length of password
   var charLength = prompt("How long do you want your password to be?");
@@ -50,6 +50,7 @@ function generatePassword() {
    charactersLowercase = ("abcdefghijklmnopqrstuvwxyz");
    console.log("abcdefghijklmnopqrstuvwxyz")
   }
+  // prompt user something like "Uppercase letters?"
 
   var charactersUppercase = confirm("Would you like to use Uppercase letters?");
     console.log(charactersUppercase)
@@ -57,6 +58,7 @@ function generatePassword() {
     charactersUppercase = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     console.log("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
   }
+  // prompt for nums?
   
   var characternumb = confirm("would you like to use numbers?");
     console.log(characternumb)
@@ -64,6 +66,7 @@ function generatePassword() {
     characternumb = ("0123456789")
     console.log("0123456789")
   }
+  // prompt for special chars?
   
   var charactersymbol = confirm(" would you like to use symbols?")
     console.log(charactersymbol)
@@ -76,13 +79,10 @@ function generatePassword() {
 
   // For the below, look into confirm(). It is like alert() and prompt(), but just for Y/N questions
 
-  // prompt user "do you want to use lowercase letters?" or something
+  // when all prompts are answered then a password is generated that matches the selceted criteria
 
-  // prompt user something like "Uppercase letters?"
 
-  // prompt for special chars?
 
-  // prompt for nums?
 
   return "Generated password goes here";
 }
