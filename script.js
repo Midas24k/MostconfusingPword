@@ -27,7 +27,7 @@ function generatePassword() {
     // add lowercase letters to the allChars array
     allChars = allChars.concat(lowercaseArr)
     // add a random lc letter to password to ensure one is chosen
-    password += charactersLowercase[Math.floor(Math.random() * charactersLowercase.charLength)]
+    password += lowercaseArr[Math.floor(Math.random() * lowercaseArr.charLength)]
   }
   // prompt user something like "Uppercase letters?"
 
@@ -37,7 +37,7 @@ function generatePassword() {
     console.log(charactersUppercase)
     // add uppercase chars to the allChars array
     allChars = allChars.concat(UppercaseArr)
-    password += charactersUppercase[Math.floor(Math.random() * charactersUppercase.charLength)]
+    password += UppercaseArr[Math.floor(Math.random() * UppercaseArr.charLength)]
   }
   // prompt for nums?
 
@@ -47,7 +47,7 @@ function generatePassword() {
     console.log(characternumb)
     // add to allChars
     allChars = allChars.concat(numbArr)
-    password += characternumb[Math.floor(Math.random() * characternumb.charLength)]
+    password += numbArr[Math.floor(Math.random() * numbArr.charLength)]
 
   }
   // prompt for special chars?
@@ -58,14 +58,10 @@ function generatePassword() {
     console.log(charactersymbol);
     // add to allChars
     allChars = allChars.concat(symbolArr)
-    password += charactersymbol[Math.floor(Math.random() * charactbol.charLength)]
+    password += symbolArr[Math.floor(Math.random() * symbolArr.charLength)]
 
   }
   // when all prompts are answered then a password is generated that matches the selceted criteria
-
-
-
-
 
   while (charLength > password.length) {
     password += allChars[Math.floor(Math.random() * allChars.length)];
