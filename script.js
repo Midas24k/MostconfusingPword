@@ -1,96 +1,84 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var password = generatePassword()
-var charactersUppercase = ["A", "B", "C", "D", "E", "F", "G", "H", " I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-var charactersLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var characternumb = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-var charactersymbol = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
-var confirmBtn = "validation"
-var allChars = charactersLowercase + charactersUppercase + characternumb + charactersymbol
-var charLength = 15;
+var UppercaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", " I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var lowercaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var numbArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+var symbolArr = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
+var allChars = []; //charactersLowercase + charactersUppercase + characternumb + charactersymbol
+var charLength = "";
+
 function generatePassword() {
-  
-
-  // }
-  // // the user is prompted to select which criteria to include in the password
-  // function generateCharacters( ) {
-  // var count = prompt("Gimme a number between 1 and 1000");
-  // count = parseInt(count);
-  // if (count > 1000 || count < 1) {
-  //   console.log('Bad');
-  // }
-
-
-  // }
-  //the user will be prompted to select at least 8 characters and no more than 128 characters
-  //the user will be asked about charactor types that include lowercase, UPPERCASE, numeric, and/or special characters
-  //the users inputs should be validated and atleast one character type should be selceted after all prompts are answered and a password is generated with the selected criteria 
-
 
   // prompt user "do you want to use lowercase letters?" or something
   console.log("you clicked the button ");
   // prompt user for length of password
-  var charLength = prompt("How long do you want your password to be?");
+  var charLength = prompt("Choose a number of characters between 8 and 128");
   charLength = parseInt(charLength);
-  // if length < 8 or length > 128, say "DO BETTER" and retry
   if (charLength < 8 || charLength > 128) {
     alert("Did not meet criteria, please try again") // something telilng the user they did not follow the rules and need to try again
     return '';
   }
+  var password = "";
+
   var charactersLowercase = confirm("Would you like to use lowercase letters?");
   console.log(charactersLowercase)
-  if (charactersLowercase == true || !charactersLowercase == false) {
-    charactersLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    console.log(charactersLowercase)
+  if (charactersLowercase == true) {
+    console.log(charactersLowercase);
+    // add lowercase letters to the allChars array
+    allChars = allChars.concat(lowercaseArr)
+    // add a random lc letter to password to ensure one is chosen
+    password += charactersLowercase[Math.floor(Math.random() * charactersLowercase.charLength)]
   }
   // prompt user something like "Uppercase letters?"
 
   var charactersUppercase = confirm("Would you like to use Uppercase letters?");
   console.log(charactersUppercase)
   if (charactersUppercase == true) {
-    charactersUppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     console.log(charactersUppercase)
+    // add uppercase chars to the allChars array
+    allChars = allChars.concat(UppercaseArr)
+    password += charactersUppercase[Math.floor(Math.random() * charactersUppercase.charLength)]
   }
   // prompt for nums?
 
   var characternumb = confirm("would you like to use numbers?");
   console.log(characternumb)
-  if (characternumb == true || !characternumb == false) {
-    characternumb = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  if (characternumb == true) {
     console.log(characternumb)
+    // add to allChars
+    allChars = allChars.concat(numbArr)
+    password += characternumb[Math.floor(Math.random() * characternumb.charLength)]
+
   }
   // prompt for special chars?
 
   var charactersymbol = confirm(" would you like to use symbols?")
   console.log(charactersymbol)
   if (charactersymbol == true) {
-    charactersymbol = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
-    console.log(charactersymbol)
-  }
- // when all prompts are answered then a password is generated that matches the selceted criteria
-  function generatePassword() {
-    let password = "";
-    password += charactersLowercase[Math.floor(Math.random() * charactersLowercase.charLength)]
-    password += charactersUppercase[Math.floor(Math.random() * charactersUppercase.charLength)]
-    passowrd += characternumb[Math.floor(Math.random() * characternumb.charLength)]
-    password += charactersymbol[Math.floor(Math.random() * charactersymbol.charLength)]
+    console.log(charactersymbol);
+    // add to allChars
+    allChars = allChars.concat(symbolArr)
+    password += charactersymbol[Math.floor(Math.random() * charactbol.charLength)]
 
-    while (charLength > password.charLength) {
-      password += allChars[Math.floor(Math.random() * allChars.charLength)];
-    }
   }
+  // when all prompts are answered then a password is generated that matches the selceted criteria
 
+
+
+
+
+  while (charLength > password.length) {
+    password += allChars[Math.floor(Math.random() * allChars.length)];
+  }
 
   // For the below, look into confirm(). It is like alert() and prompt(), but just for Y/N questions
 
- 
-
-  return "Generated password goes here";
+  return password;
 }
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword()
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   // Array.from = charLength
