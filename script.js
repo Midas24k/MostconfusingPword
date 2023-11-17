@@ -22,7 +22,7 @@ function generatePassword() {
 
   var charactersLowercase = confirm("Would you like to use lowercase letters?");
   console.log(charactersLowercase)
-  if (charactersLowercase == true) {
+  if (charactersLowercase == false) {
     console.log(charactersLowercase);
     // add lowercase letters to the allChars array
     allChars = allChars.concat(lowercaseArr)
@@ -33,7 +33,7 @@ function generatePassword() {
 
   var charactersUppercase = confirm("Would you like to use Uppercase letters?");
   console.log(charactersUppercase)
-  if (charactersUppercase == true) {
+  if (charactersUppercase == false) {
     console.log(charactersUppercase)
     // add uppercase chars to the allChars array
     allChars = allChars.concat(UppercaseArr)
@@ -43,7 +43,7 @@ function generatePassword() {
 
   var characternumb = confirm("would you like to use numbers?");
   console.log(characternumb)
-  if (characternumb == true) {
+  if (characternumb ==  false) {
     console.log(characternumb)
     // add to allChars
     allChars = allChars.concat(numbArr)
@@ -54,7 +54,7 @@ function generatePassword() {
 
   var charactersymbol = confirm(" would you like to use symbols?")
   console.log(charactersymbol)
-  if (charactersymbol == true) {
+  if (charactersymbol == false) {
     console.log(charactersymbol);
     // add to allChars
     allChars = allChars.concat(symbolArr)
